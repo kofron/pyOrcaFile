@@ -1,5 +1,8 @@
-# We need this to be able to read the binary data
-# format in the ORCA files
+# -*- python -*-
+# Started 3/17/2011 by jared kofron <jared.kofron@gmail.com>
+
+# We need the struct module to be able to read the binary data
+# in the ORCA files
 from struct import unpack
 
 # for file seeking offsets
