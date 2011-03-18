@@ -1,0 +1,7 @@
+This is (or eventually will be) a set of utilities for quickly 
+accessing ORCA data file metadata. 
+
+Why is this useful?  Because sometimes all you care about is the
+metadata - at least, for now.  Your processing pipeline needs to 
+know, for example, what the livetime of the run is, or if a 
+particular bit is masked in.  Why parse the entire file?
