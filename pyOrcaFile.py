@@ -38,19 +38,19 @@ def get_t0(header):
 # dataID and timestamp of the run record.
 def get_firstRunRec(file_handle,offset):
     file_handle.seek(offset)
-    (dId,noOp,noOp,ts) = unpack('>LLLL',file_handle.read(16))
+    (dId, _ , _ ,ts) = unpack('>LLLL',file_handle.read(16))
     return (dId,ts)
 
 # Takes a file handle and gets the last record.
 def get_lastRunRec(file_handle):
     file_handle.seek(0,SEEK_END)
     file_handle.seek(-16,SEEK_CUR)
-    (dId,noOp,noOp,ts) = unpack('>LLLL',file_handle.read(16))
+    (dId, _ , _ ,ts) = unpack('>LLLL',file_handle.read(16))
     return (dId,ts)
 
 # Gets the livetime in seconds for an ORCA run file.
 def get_livetime(file_handle):
-    (hd,noOp) = get_hd_rc_lengths(file_handle)
+    (hd, _ ) = get_hd_rc_lengths(file_handle)
     t0 = get_t0(get_header(file_handle,hd))
     (dId,tf) = get_lastRunRec(file_handle)
     return tf-t0
