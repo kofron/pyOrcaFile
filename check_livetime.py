@@ -7,7 +7,7 @@ def main(args):
     try:
         handle = open(fname)
         print(get_livetime(handle))
-    except Exeption as e:
+    except Exception as e:
         print(e)
 
 if __name__ == "__main__":
