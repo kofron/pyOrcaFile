@@ -52,5 +52,5 @@ def get_lastRunRec(file_handle):
 def get_livetime(file_handle):
     (hd, _ ) = get_hd_rc_lengths(file_handle)
     t0 = get_t0(get_header(file_handle,hd))
-    (dId,tf) = get_lastRunRec(file_handle)
+    ( _ ,tf) = get_lastRunRec(file_handle)
     return tf-t0
