@@ -37,6 +37,7 @@ def get_t0(header):
 # first data record is located and returns the
 # dataID and timestamp of the run record.
 def get_firstRunRec(file_handle,offset):
+    file_handle.seek(offset)
     (dId,noOp,noOp,ts) = unpack('>LLLL',file_handle.read(16))
     return (dId,ts)
 
